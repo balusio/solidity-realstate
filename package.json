@@ -1,0 +1,15 @@
+{
+  "name": "solidity-realstate",
+  "version": "0.0.1",
+  "description": "Rent apartment smart contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:balusio/solidity-realstate.git"
+  },
+  "author": "",
+  "license": "MIT"
+}
