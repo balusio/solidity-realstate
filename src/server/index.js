@@ -1,14 +1,19 @@
 import express from 'express';
-import userController from '@controllers/userController';
-import userModels from '@models/userModel';
+import { connect, connection } from 'mongoose';
+import router from '@routes';
 
 const app = express();
 
-app.get('/', (req, res) => {
-  req?.log?.test;
-  res.send(userController.hello);
+connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true });
+
+connection.on('error', () => {
+  console.error.bind(console, 'connection error:');
 });
 
-app.listen(4000, () => {
-  console.log('app is listening to port 4000');
+app.use(router());
+app.listen(4200, () => {
+  console.log('app is listening to port 4200');
+});
+connection.once('open', () => {
+  console.log('connction open');
 });
