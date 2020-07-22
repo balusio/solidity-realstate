@@ -1,0 +1,18 @@
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "extensions": [".js"],
+      "alias": {
+        "@server": "./src/server",
+        "@routes": "./src/routes",
+        "@middlewares": "./src/middlewares",
+        "@models": "./src/models",
+        "@controllers": "./src/controllers",
+        "@smartcontracts": "./src/smartcontracts"
+      }
+    }]
+  ]
+}

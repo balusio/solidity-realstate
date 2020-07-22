@@ -1,0 +1,26 @@
+{
+  "env": {
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "extends": "eslint-config-airbnb-base",
+  "rules": {
+    "comma-dangle": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "alias": {
+          "@server": "./src/server",
+          "@routes": "./src/routes",
+          "@middlewares": "./src/middlewares",
+          "@models": "./src/models",
+          "@controllers": "./src/controllers",
+          "@smartcontracts": "./src/smartcontracts"
+        }
+      }
+    }
+  }
+}

@@ -2,14 +2,39 @@
   "name": "solidity-realstate",
   "version": "0.0.1",
   "description": "Rent apartment smart contract",
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec babel-node src/server/index.js --watch src",
+    "build": "babel src --out-dir public --ignore src/**/*.spec.js",
+    "start": "node public/server/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com-personal:balusio/solidity-realstate.git"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@shelf/jest-mongodb": "^1.2.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.25"
+  }
 }
