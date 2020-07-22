@@ -10,4 +10,7 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
+//  "setupFiles": [
+//    "<rootDir>/jest.init.js"
+//   ],
 };

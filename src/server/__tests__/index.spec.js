@@ -1,5 +1,5 @@
 import { connect } from 'mongoose';
-import userModel from 'models/userModel';
+// import userModel from 'models/userModel';
 
 const userData = {
   name: 'TekLoon',
@@ -21,13 +21,14 @@ describe('User Model Test', () => {
         }
       }
     );
-    db = await connection.db();
+    db = connection.db();
 
     console.log(db);
   });
-
+  it('should start to do something', () => {
+    console.log(db);
+  });
   afterAll(async () => {
     await connection.close();
   });
-
 });
