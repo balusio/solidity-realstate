@@ -18,8 +18,8 @@ const registerUser = (req, res) => {
       // eslint-disable-next-line new-cap
       const newUser = new userModel({
         name: userQuery,
-        password: password,
-        email: email,
+        password,
+        email,
       });
       newUser.save().then((data) => {
         console.log(data);
@@ -30,33 +30,25 @@ const registerUser = (req, res) => {
       });
     }
   });
-
-  // if (existUser) {
-  //   res.send('lo siento usuario registrado0');
-  // } else {
-  //   const createdUser = userModel.createOne({
-  //     name,
-  //     password,
-  //     email
-  //   });
-
-  //   console.log(createdUser);
-  //   const checkedUser = userModel.findOne({
-  //     email
-  //   });
-  //   console.log('user found', checkedUser);
-  //   res.send(`INGRESASTE AL REGISTRO PRINCIPAL, ${checkedUser.email}`);
-  // }
 };
 
-const loginUser = (user) => {
-  const { name, password, email } = user;
+const loginUser = ({ req, res, next }) => {
+  const { username, password } = req.body;
 
-  // userModel.findOne({
-  //   name,
-  //   password,
-  //   email
-  // });
+  userModel.findOne({
+    username,
+  }, (err, user) => {
+    if (err) res.send('error, usuario no encontrado');
+
+    user.comparePassword(password, ({ err: passErr, isMatch }) => {
+      if (passErr) res.send('error validando');
+      if(isMatch) {
+        next();
+      } else {
+        res.send('contrasena invalida');
+      }
+    });
+  });
 };
 
 export { registerUser, loginUser };
