@@ -1,0 +1,11 @@
+FROM jboss/keycloak
+
+ENV KEYCLOAK_USER="jorge"
+ENV KEYCLOAK_PASSWORD="1234"
+
+# ENV POSGRES DB
+ENV DB_VENDOR=postgres
+ENV DB_USER=keycloak 
+ENV DB_PASSWORD=password
+
+EXPOSE 8080
