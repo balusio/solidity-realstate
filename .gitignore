@@ -100,5 +100,7 @@ dist
 # public Local files
 public/
 
+# contracts 
+solidity/abis/
 # mongo test global config
 globalConfig.json

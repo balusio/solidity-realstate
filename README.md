@@ -1,7 +1,21 @@
 # solidity-realstate
 a solidity based smart contract template for rent apartments
 
+1.- install ganache 
+```
+npm i -g ganache-cli
+```
 
+2.- install truffle 
+```
+npm i  -g truffle
+```
+
+3.- add ERC721  contracts
+4.- (optional) install truffle flatterner and flattern the erc721 
+```
+node_modules/.bin/truffle-flattener ./node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol > solidity/contracts/ERC721.sol
+```
 Adding keycloak container 
 
 # keycloak container 
