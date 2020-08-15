@@ -13,7 +13,7 @@ module.exports = {
   contracts_build_directory: './solidity/abis/',
   compilers: {
     solc: {
-      version: " ^0.6.0",
+      version: '^0.6.0',
       optimizer: {
         enabled: true,
         runs: 200

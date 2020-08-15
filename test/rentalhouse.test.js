@@ -28,4 +28,10 @@ contract('RentHouse', (accounts) => {
     const symbol = await contract.symbol();
     assert.equal(symbol, 'RHS');
   });
+
+  it('can be minted and create a new token', async () => {
+    const NemoHouseToken = await contract.mint('P. Sherman, 42 Wallaby Way, Sydney.');
+    const totalSupply = await contract.totalSupply();
+    assert.equal(totalSupply, 1);
+  });
 });

@@ -13,8 +13,10 @@ contract RentHouse is ERC721 {
   // TOKEN GENERATOR with adress as string and more data
   function mint(string memory _house) public {
     // push the new string into the array containing all the departaments
-    unit _id = houses.push(_house);
+    houses.push(_house);
+    uint _id = houses.length;
     // create a new unique token on the contract with the ERC721 MINT function
     _mint(msg.sender, _id);
+    _houseExist[_house] = true;
   }
 }
